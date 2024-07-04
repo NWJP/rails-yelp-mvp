@@ -16,12 +16,12 @@ Restaurant.destroy_all
 
 puts "Creating restaurants..."
 
-5.times do
+10.times do
   restaurant = Restaurant.new(
     name:    Faker::Company.name,
     address: "#{Faker::Address.street_address}, #{Faker::Address.city}",
-    rating:  rand(0..5),
-    phone_number: Faker::PhoneNumber.phone_number_with_country_code
+    # rating:  rand(0..5),
+    phone_number: Faker::PhoneNumber.phone_number_with_country_code,
     category: choices.sample
   )
   restaurant.save!
@@ -29,3 +29,5 @@ puts "Creating restaurants..."
 end
 
 puts "Finished!"
+
+# REMINDER: Run rails db:seed to launch the seeding script. ON THUR
